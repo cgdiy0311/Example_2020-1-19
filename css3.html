@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css3</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .btn_list {
+      background: #333;
+    }
+
+    .btn_list ul {
+      display: flex;
+      flex-wrap: nowrap;
+      padding: 20px;
+    }
+
+    .btn_list ul li {
+      margin: 0 20px;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    button {
+      position: relative;
+      width: 100px;
+      height: 40px;
+      background: none;
+      cursor: pointer;
+      color: #fff;
+      border: none;
+      z-index: 100;
+    }
+
+    button:before,
+    button:after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      transition: all .5s;
+    }
+
+    /* 按钮一 */
+    .btn-1:before,
+    .btn-1:after {
+      height: 2px;
+      left: 50%;
+      width: 0;
+      background: #f13f84;
+      transform: translateX(-50%);
+    }
+
+    .btn-1:before {
+      top: 0;
+    }
+
+    .btn-1:after {
+      bottom: 0;
+    }
+
+    .btn-1:hover:before,
+    .btn-1:hover:after {
+      width: 100%;
+    }
+
+    .btn-2 {
+      background: #333;
+      height: 40px;
+    }
+
+    .btn-2:before,
+    .btn-2:after {
+      width: 10px;
+      height: 10px;
+      background: #f13f84;
+      mix-blend-mode: hue;
+    }
+
+    .btn-2:before {
+      left: -2px;
+      top: -2px;
+    }
+
+    .btn-2:after {
+      right: -2px;
+      bottom: -2px;
+    }
+
+    .btn-2:hover:before,
+    .btn-2:hover:after {
+      height: calc(100% + 4px);
+      width: calc(100% + 4px);
+    }
+
+
+    button span:before,
+    button span:after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      transition: all .5s;
+    }
+
+    .btn-3 {
+      background: #333;
+      height: 40px;
+    }
+
+    .btn-3:before,
+    .btn-3:after,
+    .btn-3 span:before,
+    .btn-3 span:after {
+      width: 10px;
+      height: 10px;
+      background: #f13f84;
+      mix-blend-mode: hue;
+    }
+
+    .btn-3:before {
+      left: -2px;
+      top: -2px;
+    }
+
+    .btn-3:after {
+      right: -2px;
+      top: -2px;
+    }
+
+    .btn-3 span:before {
+      left: -2px;
+      bottom: -2px;
+    }
+
+    .btn-3 span:after {
+      right: -2px;
+      bottom: -2px;
+    }
+
+    .btn-3:hover:before,
+    .btn-3:hover:after,
+    .btn-3:hover span:before,
+    .btn-3:hover span:after {
+      height: 60%;
+      width: 60%;
+    }
+
+    .btn-4 {
+      height: 40px;
+      border: 1px solid #f13f84;
+    }
+
+    .btn-4:before,
+    .btn-4:after {
+      width: 10px;
+      height: 10px;
+      border-style: solid;
+      border-color: #f13f84;
+    }
+
+    .btn-4:before {
+      left: -4px;
+      top: -4px;
+      border-width: 1px 0 0 1px;
+    }
+
+    .btn-4:after {
+      right: -4px;
+      bottom: -4px;
+      border-width: 0 1px 1px 0;
+    }
+
+    .btn-4:hover:before,
+    .btn-4:hover:after {
+      height: calc(100% + 7px);
+      width: calc(100% + 7px);
+    }
+
+    .btn-5 {
+      background: #333;
+      height: 40px;
+      border: 1px solid #fff;
+    }
+
+    .btn-5:before,
+    .btn-5:after {
+      width: 10px;
+      height: 10px;
+      border-style: solid;
+      border-color: #fff;
+    }
+
+    .btn-5:before {
+      left: -4px;
+      top: -4px;
+      border-width: 1px 0 0 1px;
+    }
+
+    .btn-5:after {
+      right: -4px;
+      bottom: -4px;
+      border-width: 0 1px 1px 0;
+    }
+
+    .btn-5:hover {
+      border-color: #f13f84;
+    }
+
+    .btn-5:hover:before,
+    .btn-5:hover:after {
+      height: calc(100% + 7px);
+      width: calc(100% + 7px);
+      border-color: #f13f84;
+      transform: rotateY(180deg);
+    }
+
+    .btn-6 {
+      overflow: hidden;
+    }
+
+    .btn-6:before,
+    .btn-6:after,
+    .btn-6 span:before,
+    .btn-6 span:after {
+      background: linear-gradient(to right, rgba(0, 0, 0, 0), #f13f84);
+      transition: all 2s;
+    }
+
+    .btn-6:before,
+    .btn-6:after {
+      width: 100%;
+      height: 1px;
+    }
+
+    .btn-6:before {
+      top: 0;
+      left: -100%;
+    }
+
+    .btn-6:after {
+      bottom: 0;
+      right: -100%;
+    }
+
+    .btn-6 span:before,
+    .btn-6 span:after {
+      width: 1px;
+      height: 100%;
+    }
+
+    .btn-6 span:before {
+      bottom: -100%;
+      left: 0;
+    }
+
+    .btn-6 span:after {
+      top: -100%;
+      right: 0;
+    }
+
+    .btn-6:hover:before {
+      animation: topA 1s linear infinite;
+      animation-delay: .5s;
+    }
+
+    @keyframes topA {
+      100% {
+        left: 100%;
+      }
+    }
+
+    .btn-6:hover span:after {
+      animation: rightA 1s linear infinite;
+      animation-delay: 1s;
+    }
+
+    @keyframes rightA {
+      100% {
+        top: 100%;
+      }
+    }
+
+    .btn-6:hover:after {
+      animation: bottomA 1s linear infinite;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes bottomA {
+      100% {
+        right: 100%;
+      }
+    }
+
+    .btn-6:hover span:before {
+      animation: leftA 1s linear infinite;
+      animation-delay: 2s;
+    }
+
+    @keyframes leftA {
+      100% {
+        bottom: 100%;
+      }
+    }
+
+    .btn-7 {
+      position: relative;
+      color: #f13f84;
+      text-decoration: none;
+      width: 100px;
+      height: 40px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .btn-7 .outline {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      stroke: #f13f84;
+      stroke-width: 2px;
+      fill: transparent;
+      stroke-dasharray: 100 500;
+      stroke-dashoffset: 225;
+      transition: all .5s;
+      box-sizing: border-box;
+    }
+
+    .btn-7 .text {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      line-height: 40px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .btn-7:hover .outline {
+      stroke-dasharray: 600 0;
+      stroke-dashoffset: 475;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="btn_list">
+    <ul>
+      <li>
+        <button class="btn-1">按钮一</button>
+      </li>
+      <li>
+        <button class="btn-2">按钮二</button>
+      </li>
+      <li>
+        <button class="btn-3">
+          <span>按钮三</span>
+        </button>
+      </li>
+      <li>
+        <button class="btn-4">按钮四</button>
+      </li>
+      <li>
+        <button class="btn-5">按钮五</button>
+      </li>
+      <li>
+        <button class="btn-6">
+          <span>按钮六</span>
+        </button>
+      </li>
+      <li>
+        <button class="btn-7">
+          <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <rect class="outline" height="100%" width="100%" />
+            <span class="text">按钮七</span>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+</body>
+
+</html>
